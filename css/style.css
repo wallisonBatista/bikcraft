@@ -1,4 +1,10 @@
 /* Estilos gerais */
+:root {
+    --branco: #FFF;
+    --amarelo: #fec63e;
+    --preto: #000;
+}
+
 body {
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -9,10 +15,14 @@ p {
     line-height: 20px;
 }
 
+img {
+    display: block;
+}
+
 .btn {
-    border: 3px solid #fec63e;
+    border: 3px solid var(--amarelo);
     padding: 10px 30px;
-    color: #fec63e;
+    color: var(--amarelo);
     font-size: 14px;
     line-height: 20px;
     text-transform: uppercase;
@@ -21,8 +31,34 @@ p {
 }
 
 .btn:hover {
-    color: #FFF;
-    border-color: #FFF;
+    color: var(--branco);
+    border-color: var(--branco);
+}
+
+.btn.btn-preto:hover {
+    color: var(--preto);
+    border-color: var(--preto);
+}
+
+.subtitulo {
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 30px;
+    letter-spacing: .1em;
+    color: var(--preto);
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.subtitulo::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px; 
+    background: var(--preto);
+
+    margin: 8px auto;
 }
 
 /* Header */
@@ -30,8 +66,11 @@ p {
     position: fixed;
     top: 0;
     width: 100%;
-    background: #fec63e;
+    background: var(--amarelo);
     padding: 15px 0;
+
+    /*itens que vem abaixo não ficaram por cima do header*/
+    z-index: 10;
 }
 
 .header_menu {
@@ -45,7 +84,7 @@ p {
 }
 
 .header_menu ul li a {
-    color: #000;
+    color: var(--preto);
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: .1em;
@@ -56,7 +95,7 @@ p {
 }
 
 .header_menu ul li a:hover {
-    color: #FFF;
+    color: var(--branco);
 }
 /* Introdução */
 .introducao {
@@ -69,12 +108,12 @@ p {
     padding-top: 80px;
 
     /*colocando introdução depois do header como está fixo o conteúdo fica por cima necessitando do mg top*/
-    margin-top: 96px;
+    margin-top: 92px;
 }
 
 .introducao h1 {
     font-size: 48px;
-    color: #FFF;
+    color: var(--branco);
     font-weight: bold;
     text-transform: uppercase;
 }
@@ -82,7 +121,7 @@ p {
 /*Citação*/
 .quote-externo {
     max-width: 320px;
-    color: #FFF;
+    color: var(--branco);
 
     /*Alinhando ao centro*/
     margin: 0 auto;
@@ -101,7 +140,7 @@ p {
     display: block;
     width: 60px;
     height: 3px; 
-    background: #FFF;
+    background: var(--branco);
 
     margin: 14px auto 10px auto;
 }
@@ -111,4 +150,138 @@ p {
     font-weight: bold;
     font-size: 14px;
     letter-spacing: .1em;
+}
+
+/* Produtos */
+.produtos {
+    padding: 60px 0;
+}
+
+/*Deixando icones inline-block corrigindo erro ao add style global img (style global arruma posicionamento da img Linhas na seção qualidade)*/
+.produtos_lista img {
+    display: inline-block;
+}
+
+.produtos_lista li{
+    background: var(--amarelo);
+    text-align: center;
+}
+
+.produtos_lista li h3 {
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 25px;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    margin-top: 20px;
+}
+
+.produtos_icone {
+
+}
+
+.produtos_lista li h3:after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px; 
+    background: var(--preto);
+
+    margin: 2px auto;
+}
+
+.produtos_lista li p {
+    padding: 10px 20px 20px 20px;
+}
+
+.produtos_icone {
+    background: var(--preto);
+    padding: 20px 0;
+}
+
+.call {
+    padding-top: 40px;
+    text-align: center;
+    clear: both;
+}
+
+.call p {
+    margin-bottom: 20px;
+}
+
+/* Portfólio */
+.portfolio {
+    width: 100%;
+    background: var(--preto);
+    padding: 40px 0 ;
+}
+
+.portfolio .subtitulo {
+    color: var(--amarelo);
+}
+
+.portfolio .subtitulo:after {
+    background: var(--amarelo);
+}
+
+/* Aplica no último LI*/
+.portfolio_lista li:last-child {
+    margin-top: 20px;
+}
+
+.portfolio .call p {
+    color: var(--branco);
+}
+
+/* Qualidade */
+.qualidade {
+    padding: 60px 0;
+}
+
+/* Add linhas Qualidade*/
+.qualidade:after {
+    content: "";
+    width: 634px;
+    height: 83px;
+    display: block;
+    background: url("../img/linhas.svg") no-repeat center;
+
+    /*Posicionar por cima*/
+    position: absolute;
+    top: 201px;
+    right: 163.5px;
+    z-index: -1;
+}
+
+.qualidade img {
+    /* Centralizar*/
+    margin: 0 auto;
+}
+
+.qualidade_lista {
+    padding-top: 10px;
+}
+
+.qualidade_lista li {
+    text-align: center;
+    padding: 0 40px;
+}
+
+.qualidade_lista li h3 {
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 25px;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    margin-top: 20px;
+}
+
+.qualidade_lista li h3:after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px; 
+    background: var(--preto);
+
+    margin: 6px auto;
 }
