@@ -1,0 +1,82 @@
+.interna-produtos {
+    background: url("../img/bg-produtos.jpg") no-repeat center;
+    background-size: cover;
+}
+
+.produto-item {
+    padding-top: 60px 0;
+    margin-top: 60px;
+}
+
+.produto-icone {
+    background: var(--preto);
+    padding: 70px 0;
+}
+
+.produto-icone img {
+    margin: 0 auto;
+}
+
+.produto-item h2 {
+    font-size: 36px;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    font-weight: bold;
+    text-align: center;
+    color: var(--branco);
+
+    /* Posicionar o h2 para cima da imagem*/
+    position: relative;
+    top: -180px;
+
+    /* Consertando erro do posionamento relativo aumentar o espaçamento entre as imagens*/
+    margin-bottom: -56px;
+}
+
+.produto-item h2:before, .produto-item h2:after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: var(--branco);
+    margin: 6px auto 8px auto;
+}
+
+.produto-info {
+    background: var(--preto);
+}
+
+.produto-info p {
+    color: var(--branco);
+    font-size: 18px;
+    line-height: 25px;
+    height: 180px;
+    padding: 30px 40px;
+}
+
+.produto-info ul li {
+    background: var(--amarelo);
+    text-transform: uppercase;
+    font-size: 18px;
+    line-height: 20px;
+    font-weight: bold;
+
+    /*Um ao lado do outro*/
+    float: left;
+
+    width: 229px;
+    height: 49px;
+    text-align: center;
+    padding-top: 16px;
+}
+
+/* Se comunica com os números ímpares da lista || odd com Ímpar E even com Par || */
+.produto-info ul li:nth-child(odd) {
+    margin-left: 2px;
+}
+
+/* Add uma margem bottom entre os itens [1, 2] e [3, 4] criando uma linha de 2px, pelo background dos 
+    itens da lista serem amarelo e o bg da div ser preto */
+.produto-info ul li:nth-child(1), .produto-info ul li:nth-child(2) {
+    margin-bottom: 2px;
+}
